@@ -9,11 +9,10 @@ export const Leads: CollectionConfig = {
     group: "Inbox",
   },
   access: {
-    // Only admins can read/update/delete leads — nobody can create via admin (form does it)
     create: () => true,
-    read: ({ req }) => req.user?.role === "admin",
-    update: ({ req }) => req.user?.role === "admin",
-    delete: ({ req }) => req.user?.role === "admin",
+    read: ({ req }) => Boolean(req.user),
+    update: ({ req }) => Boolean(req.user),
+    delete: ({ req }) => Boolean(req.user),
   },
   fields: [
     {
