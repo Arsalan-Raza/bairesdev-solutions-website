@@ -42,13 +42,22 @@ export function SiteFooter() {
             <h5 className="mb-6 text-xs font-bold tracking-[0.3em] text-primary uppercase">Contact</h5>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li>
-                <a href="mailto:hello@bairesdev.solutions" className="hover:text-primary transition-colors">
-                  hello@bairesdev.solutions
+                <a href="mailto:aarrssllaann42@gmail.com" className="hover:text-primary transition-colors">
+                  aarrssllaann42@gmail.com
                 </a>
               </li>
-              <li>+1 (555) 000-1111</li>
-              <li>123 Engineering Plaza, Suite 400</li>
-              <li>San Francisco, CA 94103</li>
+              <li>
+                <a href="mailto:5144.2019.gct@gmail.com" className="hover:text-primary transition-colors">
+                  5144.2019.gct@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+923017281369" className="hover:text-primary transition-colors">0301 728 1369</a>
+              </li>
+              <li>
+                <a href="tel:+923084169496" className="hover:text-primary transition-colors">+92 308 416 9496</a>
+              </li>
+              <li>Lahore, Pakistan</li>
             </ul>
           </div>
         </div>

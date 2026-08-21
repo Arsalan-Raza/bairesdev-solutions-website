@@ -34,8 +34,8 @@ export default function PrivacyPage() {
           <h2 className="font-display text-2xl font-bold text-foreground">Contact</h2>
           <p>
             For privacy-related enquiries, please email{" "}
-            <a href="mailto:privacy@bairesdev.solutions" className="text-primary hover:underline">
-              privacy@bairesdev.solutions
+            <a href="mailto:aarrssllaann42@gmail.com" className="text-primary hover:underline">
+              aarrssllaann42@gmail.com
             </a>.
           </p>
         </div>

@@ -35,15 +35,17 @@ export default function ContactPage() {
                 <div className="mt-16 space-y-8">
                   <div>
                     <h3 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Email</h3>
-                    <a href="mailto:hello@bairesdev.solutions" className="mt-4 block text-lg hover:text-primary transition-colors">hello@bairesdev.solutions</a>
+                    <a href="mailto:aarrssllaann42@gmail.com" className="mt-4 block text-lg hover:text-primary transition-colors">aarrssllaann42@gmail.com</a>
+                    <a href="mailto:5144.2019.gct@gmail.com" className="mt-1 block text-lg hover:text-primary transition-colors">5144.2019.gct@gmail.com</a>
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Phone</h3>
+                    <a href="tel:+923017281369" className="mt-4 block text-lg hover:text-primary transition-colors">0301 728 1369</a>
+                    <a href="tel:+923084169496" className="mt-1 block text-lg hover:text-primary transition-colors">+92 308 416 9496</a>
                   </div>
                   <div>
                     <h3 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Headquarters</h3>
-                    <p className="mt-4 text-lg">San Francisco, California</p>
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold tracking-[0.3em] text-primary uppercase">Global Reach</h3>
-                    <p className="mt-4 text-lg">12 International Delivery Hubs</p>
+                    <p className="mt-4 text-lg">Lahore, Pakistan</p>
                   </div>
                 </div>
               </div>

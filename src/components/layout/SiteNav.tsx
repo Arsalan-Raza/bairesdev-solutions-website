@@ -11,6 +11,7 @@ const links = [
   { href: "/case-studies", label: "Case Studies" },
   { href: "/technologies", label: "Technologies" },
   { href: "/process", label: "Process" },
+  { href: "/team", label: "Team" },
   { href: "/careers", label: "Careers" },
   { href: "/blog", label: "Insights" },
 ] as const;

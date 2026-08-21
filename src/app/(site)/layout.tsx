@@ -50,16 +50,26 @@ const organizationSchema = {
   description: "Custom software development, AI engineering, and digital transformation for global enterprises.",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "San Francisco",
-    addressRegion: "CA",
-    addressCountry: "US",
+    addressLocality: "Lahore",
+    addressRegion: "Punjab",
+    addressCountry: "PK",
   },
-  contactPoint: {
-    "@type": "ContactPoint",
-    email: "hello@bairesdevsolution.com",
-    contactType: "sales",
-    availableLanguage: "English",
-  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      email: "aarrssllaann42@gmail.com",
+      telephone: "+923017281369",
+      contactType: "sales",
+      availableLanguage: "English",
+    },
+    {
+      "@type": "ContactPoint",
+      email: "5144.2019.gct@gmail.com",
+      telephone: "+923084169496",
+      contactType: "customer support",
+      availableLanguage: "English",
+    },
+  ],
   sameAs: [],
 };
 
