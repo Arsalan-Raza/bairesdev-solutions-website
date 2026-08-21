@@ -10,6 +10,7 @@
     "generate:importmap": "node --experimental-require-module ./node_modules/payload/dist/bin/index.js generate:importmap"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.120.0",
     "@payloadcms/db-postgres": "^3.88.0",
     "@payloadcms/next": "^3.88.0",
     "@payloadcms/richtext-lexical": "^3.88.0",
