@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { getPayload } from "payload";
 import config from "@payload-config";
 import { markdownToLexical } from "@/lib/markdownToLexical";
@@ -78,42 +78,40 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    return NextResponse.json({ error: "ANTHROPIC_API_KEY not configured" }, { status: 500 });
+  if (!process.env.GEMINI_API_KEY) {
+    return NextResponse.json({ error: "GEMINI_API_KEY not configured" }, { status: 500 });
   }
 
   // Pick a topic based on day of year for variety
-  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+  const dayOfYear = Math.floor(
+    (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000
+  );
   const topic = TOPICS[dayOfYear % TOPICS.length];
 
   try {
-    const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
-    const message = await anthropic.messages.create({
-      model: "claude-sonnet-4-6",
-      max_tokens: 2048,
-      messages: [
-        {
-          role: "user",
-          content: `You are a senior engineer and writer at BairesDev Solutions, a premium software engineering firm serving global enterprises.
+    const prompt = `You are a senior engineer and writer at BairesDev Solutions, a premium software engineering firm serving global enterprises.
 
 Write a practical, opinionated engineering blog post about: "${topic}"
 
-Respond ONLY with a JSON object in this exact format (no markdown wrapping):
+Respond ONLY with a valid JSON object — no markdown code fences, no extra text, just the raw JSON:
 {
   "title": "compelling title (max 80 chars)",
   "slug": "url-friendly-slug",
   "excerpt": "2-3 sentence summary that is specific and honest (max 200 chars)",
-  "category": one of: "web" | "mobile" | "ai" | "ecommerce" | "crm" | "marketing",
+  "category": "one of: web | mobile | ai | ecommerce | crm | marketing",
   "readTime": "X min",
   "content": "the full post in Markdown with ## and ### headings, paragraphs, and - bullet lists. 600-900 words. Be direct, technical, and specific. No fluff."
-}`,
-        },
-      ],
-    });
+}`;
 
-    const rawText = message.content[0].type === "text" ? message.content[0].text : "";
-    const postData = JSON.parse(rawText);
+    const result = await model.generateContent(prompt);
+    const rawText = result.response.text().trim();
+
+    // Strip markdown code fences if Gemini wraps the response
+    const jsonText = rawText.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "").trim();
+    const postData = JSON.parse(jsonText);
 
     const payload = await getPayload({ config });
 
