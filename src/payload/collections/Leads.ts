@@ -6,6 +6,7 @@ export const Leads: CollectionConfig = {
     useAsTitle: "name",
     defaultColumns: ["name", "email", "company", "subject", "createdAt"],
     description: "Contact form submissions from the website.",
+    group: "Inbox",
   },
   access: {
     // Only admins can read/update/delete leads — nobody can create via admin (form does it)
