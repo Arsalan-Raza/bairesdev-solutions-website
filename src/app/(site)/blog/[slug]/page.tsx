@@ -156,16 +156,17 @@ export default async function BlogPostPage({ params }: Args) {
               {post.excerpt}
             </p>
           )}
-          <div className="prose prose-lg prose-invert max-w-none
-            prose-headings:font-display prose-headings:font-bold
+          <div className="prose prose-lg max-w-none
+            prose-headings:font-display prose-headings:font-bold prose-headings:text-foreground
             prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
             prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
             prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6
             prose-a:text-primary prose-a:no-underline hover:prose-a:underline
             prose-strong:text-foreground
             prose-code:text-primary prose-code:bg-muted/40 prose-code:px-1 prose-code:py-0.5
-            prose-blockquote:border-primary prose-blockquote:text-muted-foreground
-            prose-ul:text-muted-foreground prose-ol:text-muted-foreground">
+            prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:text-muted-foreground
+            prose-ul:text-muted-foreground prose-ol:text-muted-foreground
+            prose-li:text-muted-foreground">
             {post.content && <RichText data={post.content} />}
           </div>
         </article>
