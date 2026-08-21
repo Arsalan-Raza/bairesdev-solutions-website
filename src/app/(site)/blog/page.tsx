@@ -7,10 +7,13 @@ import { PageShell, PageHeader, CtaBand } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Insights | Engineering Notes from the Field",
-  description: "Essays and field notes on modernisation, applied AI, commerce architecture and engineering leadership.",
+  description: "Essays and field notes on legacy modernisation, applied AI, commerce architecture and engineering leadership — written by the engineers doing the work.",
+  alternates: { canonical: "https://www.bairesdevsolution.com/blog" },
+  keywords: ["software engineering blog", "enterprise technology insights", "AI engineering articles", "software architecture blog", "digital transformation blog"],
   openGraph: {
     title: "Insights | BairesDev Solutions",
     description: "Written by the engineers doing the work, not a content team.",
+    url: "https://www.bairesdevsolution.com/blog",
   },
 };
 

@@ -4,8 +4,15 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Start Your Project",
-  description: "Connect with our engineering experts. Start a project, discuss a partnership, or just say hello.",
+  title: "Contact BairesDev Solutions | Start Your Project",
+  description: "Connect with our engineering experts to start a project, discuss a partnership, or get a quote. We respond within one business day.",
+  alternates: { canonical: "https://www.bairesdevsolution.com/contact" },
+  keywords: ["contact software development company", "hire software engineers", "enterprise software quote", "technology consulting contact"],
+  openGraph: {
+    title: "Contact BairesDev Solutions | Start Your Project",
+    description: "Connect with our engineering experts. We respond within one business day.",
+    url: "https://www.bairesdevsolution.com/contact",
+  },
 };
 
 export default function ContactPage() {

@@ -3,8 +3,10 @@ import { PageShell, PageHeader, CtaBand } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Technologies | Our Engineering Stack & Standards",
-  description: "The languages, platforms, data systems and AI tooling we use — and the principles that decide when we use them.",
-  openGraph: { title: "Technologies | BairesDev Solutions", description: "A deliberately boring stack where it matters, and a sharp one where it counts." },
+  description: "TypeScript, React, Go, Python, Kubernetes, AWS and more — the languages, platforms and AI tooling powering BairesDev Solutions engagements.",
+  alternates: { canonical: "https://www.bairesdevsolution.com/technologies" },
+  keywords: ["software engineering stack", "React TypeScript development", "cloud engineering AWS", "Kubernetes microservices", "LangGraph AI development"],
+  openGraph: { title: "Technologies | BairesDev Solutions", description: "A deliberately boring stack where it matters, and a sharp one where it counts.", url: "https://www.bairesdevsolution.com/technologies" },
 };
 
 const layers = [

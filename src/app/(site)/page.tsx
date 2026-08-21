@@ -5,9 +5,16 @@ import { SiteNav } from "@/components/layout/SiteNav";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "BairesDev Solutions | Engineering the Future",
+  title: "BairesDev Solutions | Custom Software Development Company",
   description:
-    "High-end custom software solutions, AI engineering, and digital acceleration for global enterprises.",
+    "BairesDev Solutions builds custom software, AI systems, and digital products for global enterprises. 500+ engineers, 98% client retention, 12 global offices.",
+  alternates: { canonical: "https://www.bairesdevsolution.com" },
+  keywords: ["custom software development company", "enterprise software engineering", "AI development services", "digital transformation company", "software outsourcing"],
+  openGraph: {
+    title: "BairesDev Solutions | Custom Software Development Company",
+    description: "Custom software, AI systems, and digital products for global enterprises. 500+ engineers, 98% client retention.",
+    url: "https://www.bairesdevsolution.com",
+  },
 };
 
 const services = [

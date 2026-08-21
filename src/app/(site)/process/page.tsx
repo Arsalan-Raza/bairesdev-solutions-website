@@ -3,8 +3,10 @@ import { PageShell, PageHeader, CtaBand } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Process | How We Deliver Enterprise Software",
-  description: "Discovery, architecture, build, hardening and partnership — the five phases behind every engagement.",
-  openGraph: { title: "Process | BairesDev Solutions", description: "A delivery model designed to remove surprises, not to generate documents." },
+  description: "Discovery, architecture, build, hardening and partnership — the five phases behind every BairesDev Solutions engagement. Fixed cadence, no surprises.",
+  alternates: { canonical: "https://www.bairesdevsolution.com/process" },
+  keywords: ["software development process", "agile software delivery", "enterprise project methodology", "software engineering engagement model"],
+  openGraph: { title: "Process | BairesDev Solutions", description: "A delivery model designed to remove surprises, not to generate documents.", url: "https://www.bairesdevsolution.com/process" },
 };
 
 const phases = [

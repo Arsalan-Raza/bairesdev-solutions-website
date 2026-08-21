@@ -4,8 +4,10 @@ import { PageShell, PageHeader, CtaBand } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Case Studies | Measured Enterprise Outcomes",
-  description: "Selected engagements: commerce replatforms, AI underwriting, logistics control planes and CRM consolidation.",
-  openGraph: { title: "Case Studies | BairesDev Solutions", description: "Proof, with numbers: how our clients grew, modernised and scaled." },
+  description: "Selected engagements: +38% conversion for Nordwell Retail, -94% quote time for Meridian Assurance, real-time logistics for 9,000 vehicles, and more.",
+  alternates: { canonical: "https://www.bairesdevsolution.com/case-studies" },
+  keywords: ["software development case studies", "enterprise engineering results", "digital transformation examples", "software ROI proof", "tech consulting case studies"],
+  openGraph: { title: "Case Studies | BairesDev Solutions", description: "Proof, with numbers: how our clients grew, modernised and scaled.", url: "https://www.bairesdevsolution.com/case-studies" },
 };
 
 const featured = {

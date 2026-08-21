@@ -4,8 +4,10 @@ import { PageShell, PageHeader, CtaBand } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Careers | Build Systems That Outlive the Hype",
-  description: "Open roles for senior engineers, architects, designers and AI specialists at BairesDev Solutions.",
-  openGraph: { title: "Careers | BairesDev Solutions", description: "Senior-only teams, real ownership, and craft treated as a discipline." },
+  description: "Open roles for senior engineers, architects, designers and AI specialists at BairesDev Solutions. Remote-first, top-quartile pay, 94% annual retention.",
+  alternates: { canonical: "https://www.bairesdevsolution.com/careers" },
+  keywords: ["software engineering jobs", "senior engineer remote jobs", "software architect positions", "AI engineer careers", "remote engineering jobs"],
+  openGraph: { title: "Careers | BairesDev Solutions", description: "Senior-only teams, real ownership, and craft treated as a discipline.", url: "https://www.bairesdevsolution.com/careers" },
 };
 
 const roles = [

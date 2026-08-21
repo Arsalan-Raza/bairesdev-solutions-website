@@ -15,41 +15,66 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
+const BASE_URL = "https://www.bairesdevsolution.com";
+
 export const metadata: Metadata = {
   title: {
-    default: "BairesDev Solutions | Engineering the Future",
+    default: "BairesDev Solutions | Custom Software Development Company",
     template: "%s | BairesDev Solutions",
   },
   description:
-    "High-end custom software solutions, AI engineering, and digital acceleration for global enterprises.",
-  metadataBase: new URL("https://www.bairesdevsolution.com"),
+    "BairesDev Solutions delivers custom software development, AI engineering, and digital transformation for global enterprises. 500+ engineers, 98% client retention.",
+  metadataBase: new URL(BASE_URL),
+  alternates: { canonical: BASE_URL },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.bairesdevsolution.com",
+    url: BASE_URL,
     siteName: "BairesDev Solutions",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "BairesDev Solutions" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@BairesDevSol",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
+  keywords: ["custom software development", "software engineering company", "AI development", "digital transformation", "enterprise software"],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "BairesDev Solutions",
+  url: BASE_URL,
+  logo: `${BASE_URL}/logo.png`,
+  description: "Custom software development, AI engineering, and digital transformation for global enterprises.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "San Francisco",
+    addressRegion: "CA",
+    addressCountry: "US",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "hello@bairesdevsolution.com",
+    contactType: "sales",
+    availableLanguage: "English",
+  },
+  sameAs: [],
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

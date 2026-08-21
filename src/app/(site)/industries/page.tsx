@@ -4,8 +4,10 @@ import { PageShell, PageHeader, CtaBand } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Industries | Domain-Deep Engineering Teams",
-  description: "Financial services, healthcare, retail, logistics, manufacturing and energy engineering expertise.",
-  openGraph: { title: "Industries | BairesDev Solutions", description: "Regulated, high-stakes environments where engineering rigour is non-negotiable." },
+  description: "Software engineering expertise across financial services, healthcare, retail, logistics, manufacturing and energy. 18 regulated markets, 340+ enterprise programmes.",
+  alternates: { canonical: "https://www.bairesdevsolution.com/industries" },
+  keywords: ["fintech software development", "healthcare software engineering", "retail technology solutions", "enterprise software industries", "regulated industry software"],
+  openGraph: { title: "Industries | BairesDev Solutions", description: "Regulated, high-stakes environments where engineering rigour is non-negotiable.", url: "https://www.bairesdevsolution.com/industries" },
 };
 
 const industries = [

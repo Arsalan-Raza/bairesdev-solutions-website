@@ -3,6 +3,7 @@ import { PageShell } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Terms of Service | BairesDev Solutions",
+  alternates: { canonical: "https://www.bairesdevsolution.com/terms" },
   robots: { index: false, follow: false },
 };
 

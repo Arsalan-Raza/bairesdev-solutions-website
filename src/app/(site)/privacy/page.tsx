@@ -3,6 +3,7 @@ import { PageShell } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | BairesDev Solutions",
+  alternates: { canonical: "https://www.bairesdevsolution.com/privacy" },
   robots: { index: false, follow: false },
 };
 

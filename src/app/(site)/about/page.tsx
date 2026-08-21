@@ -4,7 +4,14 @@ import { PageShell } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "About BairesDev Solutions | Our Story & Engineering Philosophy",
-  description: "Learn about the people, mission, and culture behind BairesDev Solutions.",
+  description: "Founded in 2009, BairesDev Solutions has grown to 500+ engineers across 12 global offices. Learn about our mission, culture, and engineering philosophy.",
+  alternates: { canonical: "https://www.bairesdevsolution.com/about" },
+  keywords: ["about BairesDev Solutions", "software engineering company story", "enterprise technology firm", "software development team"],
+  openGraph: {
+    title: "About BairesDev Solutions | Our Story & Engineering Philosophy",
+    description: "500+ engineers, 12 global offices, and over a decade of enterprise software delivery. Learn who we are.",
+    url: "https://www.bairesdevsolution.com/about",
+  },
 };
 
 const timeline = [

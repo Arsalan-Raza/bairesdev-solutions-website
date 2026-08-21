@@ -5,8 +5,10 @@ import { PageShell, PageHeader, CtaBand } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Services | BairesDev Solutions Engineering Disciplines",
-  description: "Web, mobile, e-commerce, CRM, digital marketing and AI engineering delivered as outcome-driven enterprise services.",
-  openGraph: { title: "Services | BairesDev Solutions", description: "Six engineering disciplines built around measurable business outcomes." },
+  description: "Web, mobile, e-commerce, CRM, digital marketing and AI engineering delivered as outcome-driven enterprise services. Six disciplines, one accountable team.",
+  alternates: { canonical: "https://www.bairesdevsolution.com/services" },
+  keywords: ["software development services", "enterprise web engineering", "mobile app development", "AI machine learning services", "CRM implementation", "e-commerce development"],
+  openGraph: { title: "Services | BairesDev Solutions", description: "Six engineering disciplines built around measurable business outcomes.", url: "https://www.bairesdevsolution.com/services" },
 };
 
 const disciplines = [

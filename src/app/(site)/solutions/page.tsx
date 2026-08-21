@@ -4,8 +4,10 @@ import { PageShell, PageHeader, CtaBand } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Solutions | Business Outcomes Engineered End-to-End",
-  description: "Packaged enterprise solutions for commerce growth, customer intelligence, legacy modernisation and applied AI.",
-  openGraph: { title: "Solutions | BairesDev Solutions", description: "Outcome-led solutions: commerce, CRM intelligence, modernisation and AI." },
+  description: "Packaged enterprise solutions for commerce growth, customer intelligence, legacy modernisation and applied AI — with KPIs agreed before we start.",
+  alternates: { canonical: "https://www.bairesdevsolution.com/solutions" },
+  keywords: ["enterprise software solutions", "commerce growth platform", "legacy modernisation", "customer data platform", "AI systems integration"],
+  openGraph: { title: "Solutions | BairesDev Solutions", description: "Outcome-led solutions: commerce, CRM intelligence, modernisation and AI.", url: "https://www.bairesdevsolution.com/solutions" },
 };
 
 const solutions = [
