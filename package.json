@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:importmap": "node --experimental-require-module ./node_modules/payload/dist/bin/index.js generate:importmap"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.88.0",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
 import { Inter, Space_Grotesk } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   },
   description:
     "High-end custom software solutions, AI engineering, and digital acceleration for global enterprises.",
-  metadataBase: new URL("https://bairesdev.solutions"),
+  metadataBase: new URL("https://www.bairesdevsolution.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://bairesdev.solutions",
+    url: "https://www.bairesdevsolution.com",
     siteName: "BairesDev Solutions",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
