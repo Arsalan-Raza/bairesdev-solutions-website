@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { PageShell, PageHeader, CtaBand } from "@/components/layout/PageShell";
+import Image from "next/image";
+import { PageShell, CtaBand } from "@/components/layout/PageShell";
 
 export const metadata: Metadata = {
   title: "Our Team | BairesDev Solutions",
@@ -16,107 +17,160 @@ export const metadata: Metadata = {
 const team = [
   {
     name: "Hammad Safader",
-    role: "Founder",
-    skills: ["Zoho Developer", "Zoho One", "Zoho CRM", "AI Call Agent", "Partner / Zoho Expert"],
-    initials: "HS",
-    color: "from-cyan-500/20 to-cyan-500/5",
-    accent: "bg-cyan-500",
+    subtitle: "Founder · Zoho Developer · Partner / Zoho Expert · Zoho One · AI Call Agent",
+    bio: "Leads BairesDev Solutions' strategic direction and Zoho ecosystem. Hammad specialises in designing and deploying enterprise CRM workflows, AI call agents, and Zoho One implementations that align business operations with client growth goals.",
+    role: "Company leadership",
+    focus: "Zoho & CRM systems",
+    approach: "Partner-led delivery",
+    tags: ["ZOHO DEVELOPER", "ZOHO ONE", "ZOHO CRM", "AI CALL AGENT", "PARTNER / EXPERT"],
+    image: "/placeholder-male.png",
   },
   {
     name: "Arslan Raza",
-    role: "Co-Founder",
-    skills: ["Shopify Expert", "Shopify Plus", "Shopify B2B & Wholesale", "App Development"],
-    initials: "AR",
-    color: "from-violet-500/20 to-violet-500/5",
-    accent: "bg-violet-500",
+    subtitle: "Co-Founder · Shopify Expert · Shopify Plus · B2B & Wholesale · Apps",
+    bio: "Co-leads BairesDev Solutions and oversees Shopify engagements end to end. Arslan specialises in Shopify Plus, B2B and wholesale channel builds, and custom app development for high-growth brands seeking scalable commerce infrastructure.",
+    role: "Technical co-leadership",
+    focus: "Shopify & e-commerce",
+    approach: "B2B-first builds",
+    tags: ["SHOPIFY EXPERT", "SHOPIFY PLUS", "SHOPIFY B2B", "WHOLESALE", "APP DEVELOPMENT"],
+    image: "/placeholder-male.png",
   },
   {
     name: "Ayesha Sardar",
-    role: "Lead Developer",
-    skills: ["Shopify Expert", "Shopify Designer", "Shopify Developer", "Shopify B2B"],
-    initials: "AS",
-    color: "from-rose-500/20 to-rose-500/5",
-    accent: "bg-rose-500",
+    subtitle: "Lead Developer · Shopify Expert · Shopify Designer · Shopify B2B",
+    bio: "Leads the Shopify development practice at BairesDev Solutions. Ayesha combines design sensibility with deep technical knowledge — building custom themes, liquid sections, and B2B storefronts that convert and delight across every device.",
+    role: "Lead development",
+    focus: "Shopify design & build",
+    approach: "Detail-first execution",
+    tags: ["SHOPIFY EXPERT", "SHOPIFY DESIGNER", "SHOPIFY DEVELOPER", "SHOPIFY B2B"],
+    image: "/placeholder-female.png",
   },
   {
     name: "Muhammad Bilal",
-    role: "UI/UX Lead",
-    skills: ["Creative UI/UX Designer", "Web Design", "Mobile Design", "Design Systems"],
-    initials: "MB",
-    color: "from-amber-500/20 to-amber-500/5",
-    accent: "bg-amber-500",
+    subtitle: "UI/UX Lead · Web Design · Mobile Design · Design Systems",
+    bio: "Leads UI/UX design across web and mobile projects at BairesDev Solutions. Muhammad brings a meticulous eye for detail and a systematic approach to interface design — creating experiences that are both visually compelling and intuitive to use.",
+    role: "Design leadership",
+    focus: "Web & mobile UI/UX",
+    approach: "User-centred craft",
+    tags: ["UI/UX DESIGN", "WEB DESIGN", "MOBILE DESIGN", "DESIGN SYSTEMS", "CREATIVE DIRECTION"],
+    image: "/placeholder-male.png",
   },
   {
     name: "Masood A.",
-    role: "GoHighLevel Expert",
-    skills: ["GHL Websites", "GHL AI Automation", "Funnel Builder", "CRM Workflows"],
-    initials: "MA",
-    color: "from-emerald-500/20 to-emerald-500/5",
-    accent: "bg-emerald-500",
+    subtitle: "GoHighLevel Expert · GHL Websites · AI Automation · Funnel Builder",
+    bio: "Specialises in GoHighLevel platform builds — from website and landing page design to AI automation workflows and high-converting funnel architecture. Masood helps service businesses capture, nurture, and close more leads through intelligent automation.",
+    role: "Automation specialist",
+    focus: "GHL & funnels",
+    approach: "Conversion-first systems",
+    tags: ["GOHIGHLEVEL", "GHL WEBSITES", "AI AUTOMATION", "FUNNEL BUILDER", "CRM WORKFLOWS"],
+    image: "/placeholder-male.png",
   },
   {
     name: "Fatima H.",
-    role: "CMS Developer",
-    skills: ["WordPress Developer", "Shopify Expert", "Shopify Themes", "CMS Architecture"],
-    initials: "FH",
-    color: "from-pink-500/20 to-pink-500/5",
-    accent: "bg-pink-500",
+    subtitle: "CMS Developer · WordPress Developer · Shopify Expert · Shopify Themes",
+    bio: "Builds and maintains CMS-powered websites across WordPress and Shopify. Fatima specialises in theme customisation, plugin integration, and delivering polished, high-performance Shopify storefronts and WordPress sites on time and to specification.",
+    role: "CMS development",
+    focus: "WordPress & Shopify",
+    approach: "Theme-driven quality",
+    tags: ["WORDPRESS DEVELOPER", "SHOPIFY EXPERT", "SHOPIFY THEMES", "CMS ARCHITECTURE"],
+    image: "/placeholder-female.png",
   },
   {
     name: "Aziz UR Rehman",
-    role: "Shopify Developer",
-    skills: ["Shopify Expert", "Shopify Designer", "Shopify Developer", "Shopify Store Setup"],
-    initials: "AZ",
-    color: "from-indigo-500/20 to-indigo-500/5",
-    accent: "bg-indigo-500",
+    subtitle: "Shopify Expert · Shopify Designer · Shopify Developer · Store Setup",
+    bio: "Focuses on Shopify store builds from concept through to launch — designing, developing, and optimising storefronts that reflect each brand's identity and drive measurable sales results for clients across a wide range of industries.",
+    role: "Shopify development",
+    focus: "Store design & build",
+    approach: "Performance-led themes",
+    tags: ["SHOPIFY EXPERT", "SHOPIFY DESIGNER", "SHOPIFY DEVELOPER", "STORE SETUP"],
+    image: "/placeholder-male.png",
   },
 ];
 
 export default function TeamPage() {
   return (
     <PageShell>
-      <PageHeader
-        eyebrow="Our Team"
-        title={<>The experts<br /><span className="font-bold text-primary italic">behind the results.</span></>}
-        lead="A focused team of senior specialists across Shopify, Zoho, GoHighLevel, UI/UX, and CMS — each bringing deep platform expertise to every engagement."
-        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000"
-      />
-
-      {/* Team grid */}
-      <section className="py-24 lg:py-32">
+      {/* Hero */}
+      <section className="py-24 pt-40 lg:py-32 lg:pt-52">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="group relative overflow-hidden border border-border/40 bg-card p-8 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
-              >
-                {/* Avatar */}
-                <div className={`relative mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${member.color} ring-2 ring-border/20`}>
-                  <span className="font-display text-2xl font-bold text-foreground">
-                    {member.initials}
-                  </span>
-                  <div className={`absolute -bottom-0.5 -right-0.5 h-4 w-4 rounded-full ${member.accent} ring-2 ring-background`} />
+          <span className="mb-4 block text-xs font-bold tracking-[0.4em] text-primary uppercase">
+            Our Team
+          </span>
+          <h1 className="font-display text-5xl font-bold leading-[1.1] md:text-7xl">
+            The experts<br />
+            <span className="text-primary italic">behind the results.</span>
+          </h1>
+          <p className="mt-8 max-w-2xl text-xl leading-relaxed text-muted-foreground">
+            A focused team of senior specialists across Shopify, Zoho, GoHighLevel, UI/UX, and CMS — each bringing deep platform expertise to every engagement.
+          </p>
+        </div>
+      </section>
+
+      {/* Team list */}
+      <section className="pb-24 lg:pb-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="divide-y divide-border/40">
+            {team.map((member, i) => (
+              <div key={member.name} className="grid grid-cols-1 gap-10 py-16 lg:grid-cols-[280px_1fr] lg:gap-16">
+                {/* Photo */}
+                <div className="relative h-[280px] w-[280px] flex-shrink-0 overflow-hidden">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                  {/* Number badge */}
+                  <div className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center bg-foreground">
+                    <span className="font-display text-xs font-bold text-background">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Info */}
-                <h3 className="font-display text-xl font-bold text-foreground">{member.name}</h3>
-                <p className={`mt-1 text-xs font-bold tracking-[0.2em] uppercase`} style={{ color: "hsl(var(--primary))" }}>
-                  {member.role}
-                </p>
+                {/* Content */}
+                <div>
+                  <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
+                    {member.name}
+                  </h2>
+                  <p className="mt-3 text-[11px] font-bold tracking-[0.25em] text-muted-foreground uppercase">
+                    {member.subtitle}
+                  </p>
+                  <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                    {member.bio}
+                  </p>
 
-                {/* Skills */}
-                <ul className="mt-6 space-y-2">
-                  {member.skills.map((skill) => (
-                    <li key={skill} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span className={`h-1 w-1 flex-shrink-0 rounded-full ${member.accent}`} />
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
+                  {/* Meta grid */}
+                  <div className="mt-8 grid grid-cols-1 divide-y divide-border/40 border border-border/40 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+                    {[
+                      { label: "Role", value: member.role },
+                      { label: "Focus", value: member.focus },
+                      { label: "Approach", value: member.approach },
+                    ].map(({ label, value }) => (
+                      <div key={label} className="px-6 py-5">
+                        <p className="text-[10px] font-bold tracking-[0.25em] text-muted-foreground uppercase">
+                          {label}
+                        </p>
+                        <p className="mt-2 font-display text-base font-bold text-foreground">
+                          {value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
 
-                {/* Hover accent line */}
-                <div className={`absolute bottom-0 left-0 h-0.5 w-0 ${member.accent} transition-all duration-300 group-hover:w-full`} />
+                  {/* Tags */}
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {member.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="border border-border/60 px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] text-muted-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -124,10 +178,8 @@ export default function TeamPage() {
       </section>
 
       <CtaBand
-        heading="Work with our team"
-        sub="Tell us what you're building and we'll match you with the right specialists."
-        cta="Start a conversation"
-        href="/contact"
+        title="Work with our team"
+        body="Tell us what you're building and we'll match you with the right specialists."
       />
     </PageShell>
   );

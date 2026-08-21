@@ -4,16 +4,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-const links = [
+const desktopLinks = [
   { href: "/services", label: "Services" },
   { href: "/solutions", label: "Solutions" },
-  { href: "/industries", label: "Industries" },
-  { href: "/case-studies", label: "Case Studies" },
   { href: "/technologies", label: "Technologies" },
-  { href: "/process", label: "Process" },
   { href: "/team", label: "Team" },
-  { href: "/careers", label: "Careers" },
-  { href: "/blog", label: "Insights" },
+] as const;
+
+const mobileLinks = [
+  { href: "/services", label: "Services" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/technologies", label: "Technologies" },
+  { href: "/team", label: "Team" },
 ] as const;
 
 export function SiteNav() {
@@ -27,7 +29,7 @@ export function SiteNav() {
         </Link>
 
         <div className="hidden items-center gap-6 xl:flex">
-          {links.map((l) => (
+          {desktopLinks.map((l) => (
             <Link
               key={l.href}
               href={l.href}
@@ -58,10 +60,7 @@ export function SiteNav() {
       {open && (
         <div className="border-t border-border/40 bg-background px-6 py-6 xl:hidden">
           <div className="flex flex-col gap-4">
-            <Link href="/about" onClick={() => setOpen(false)} className="text-sm text-foreground/80 hover:text-primary transition-colors">
-              About
-            </Link>
-            {links.map((l) => (
+            {mobileLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
