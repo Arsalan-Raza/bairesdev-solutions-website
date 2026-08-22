@@ -23,7 +23,7 @@ const team = [
     focus: "Zoho & CRM systems",
     approach: "Partner-led delivery",
     tags: ["ZOHO DEVELOPER", "ZOHO ONE", "ZOHO CRM", "AI CALL AGENT", "PARTNER / EXPERT"],
-    image: "/placeholder-male.png",
+    image: "/hammad.jpeg",
   },
   {
     name: "Arslan Raza",
@@ -33,7 +33,7 @@ const team = [
     focus: "Shopify & e-commerce",
     approach: "B2B-first builds",
     tags: ["SHOPIFY EXPERT", "SHOPIFY PLUS", "SHOPIFY B2B", "WHOLESALE", "APP DEVELOPMENT"],
-    image: "/placeholder-male.png",
+    image: "/Arslan.jpg",
   },
   {
     name: "Ayesha Sardar",
