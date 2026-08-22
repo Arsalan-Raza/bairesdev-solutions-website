@@ -7,25 +7,54 @@ import { markdownToLexical } from "@/lib/markdownToLexical";
 export const maxDuration = 60;
 
 const TOPICS = [
-  "modernising legacy enterprise systems without stopping feature delivery",
-  "building production-grade AI agents that are reliable enough to trust",
-  "why most mobile apps fail at offline-first and how to fix it",
-  "the hidden cost of bad CRM data and how to build a single customer record",
-  "checkout architecture for e-commerce at scale — idempotency, sagas, and failure modes",
-  "engineering team structures that actually ship: squads, guilds, and when to break the rules",
-  "LLM evaluation frameworks: how to know if your AI feature is working",
-  "micro-frontend architecture — when it helps and when it is overkill",
-  "observability for distributed systems: what to measure and what to ignore",
-  "building accessible digital products that do not compromise on design",
+  // Zoho
+  "how Zoho CRM transforms sales pipeline visibility for growing businesses",
+  "Zoho One vs individual Zoho apps — which setup is right for your business",
+  "building AI call agents inside Zoho CRM to automate lead follow-up",
+  "Zoho CRM automation workflows that save your sales team 10 hours a week",
+  "migrating from Salesforce to Zoho CRM — what to expect and how to do it right",
+  "Zoho Desk and CRM integration: giving support teams a full customer view",
+  // Shopify
+  "how to build a Shopify B2B store that wholesale buyers actually want to use",
+  "Shopify Plus vs standard Shopify — when the upgrade is worth it",
+  "Shopify theme customisation without breaking the upgrade path",
+  "building a Shopify app from scratch — what most tutorials skip",
+  "Shopify B2B wholesale: setting up tiered pricing and net payment terms",
+  "common Shopify conversion killers and how to fix them before they cost you sales",
+  "headless Shopify — the real trade-offs before you commit to the architecture",
+  // GoHighLevel
+  "GoHighLevel vs HubSpot for service businesses — an honest comparison",
+  "building a lead capture funnel in GoHighLevel that actually converts",
+  "GoHighLevel AI voice agents: automating appointment booking end to end",
+  "GHL workflows for follow-up sequences that close without being spammy",
+  "how to build a GoHighLevel website that ranks and converts",
+  // WordPress
+  "WordPress performance in 2026 — what still matters and what is noise",
+  "building a WordPress membership site that scales past 10,000 users",
+  "WooCommerce vs Shopify — choosing the right platform for your store",
+  "WordPress security fundamentals every site owner should implement today",
+  "custom WordPress theme development: when to build vs buy a premium theme",
+  // UI/UX
+  "the UI mistakes that kill conversion on landing pages — and how to fix them",
+  "designing mobile-first interfaces that do not sacrifice desktop quality",
+  "how to build a design system that developers will actually use",
+  "UX research on a budget: five methods that give real answers fast",
+  // AI & Automation
+  "practical AI automation for small businesses — where to start and what to skip",
+  "how to use AI to write better product descriptions for your Shopify store",
+  "integrating AI chatbots with your CRM for 24/7 lead qualification",
+  "AI content workflows that save marketing teams 20 hours a month",
 ];
 
 const CATEGORY_MAP: Record<string, string> = {
-  web: "Web Engineering",
-  mobile: "Mobile",
+  zoho: "Zoho & CRM",
+  shopify: "Shopify & Commerce",
+  ghl: "GoHighLevel",
+  wordpress: "WordPress",
   ai: "Applied AI",
-  ecommerce: "Commerce",
-  crm: "Data",
-  marketing: "Leadership",
+  uiux: "UI/UX Design",
+  web: "Web Engineering",
+  ecommerce: "E-Commerce",
 };
 
 function slugify(text: string): string {
@@ -92,18 +121,20 @@ export async function GET(req: NextRequest) {
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
 
-    const prompt = `You are a senior engineer and writer at BairesDev Solutions, a premium software engineering firm serving global enterprises.
+    const prompt = `You are an expert writer at BairesDev Solutions, a digital agency specialising in Zoho, Shopify, GoHighLevel, WordPress, UI/UX design, and AI automation for businesses worldwide.
 
-Write a practical, opinionated engineering blog post about: "${topic}"
+Write a practical, opinionated blog post about: "${topic}"
+
+The post should be genuinely useful to business owners, marketers, and entrepreneurs — not just developers. Include real-world advice, specific steps, and honest trade-offs.
 
 Respond ONLY with a valid JSON object — no markdown code fences, no extra text, just the raw JSON:
 {
   "title": "compelling title (max 80 chars)",
   "slug": "url-friendly-slug",
   "excerpt": "2-3 sentence summary that is specific and honest (max 200 chars)",
-  "category": "one of: web | mobile | ai | ecommerce | crm | marketing",
+  "category": "one of: zoho | shopify | ghl | wordpress | ai | uiux | web | ecommerce",
   "readTime": "X min",
-  "content": "the full post in Markdown with ## and ### headings, paragraphs, and - bullet lists. 600-900 words. Be direct, technical, and specific. No fluff."
+  "content": "the full post in Markdown with ## and ### headings, paragraphs, and - bullet lists. 700-1000 words. Be direct and specific. No fluff. End with a practical takeaway or next step."
 }`;
 
     const result = await model.generateContent(prompt);
